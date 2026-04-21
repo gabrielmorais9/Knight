@@ -5,11 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Knight </title>
     <link rel="icon" type="image/x-icon" href="../img/hollow-knight-removebg-preview.png">
+    
+    <style>
+        body {
+      margin: 0;
+      opacity: 0;
+      animation: entrar 3s ease forwards;
+    }
 
+    @keyframes entrar {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+body {
+      margin: 0;
+      font-family: Trajan Pro Bold, serif;
+      background-color: #111;
+      color: white;
+    }
+/* 🔹 Cursor padrão do site */
+body {
+  cursor: url("cursor/Normal\ select.cur"), auto;
+}
+
+/* 🔹 Links (passar o mouse em links) */
+a {
+  cursor: url("cursor/Link\ select.cur"), pointer;
+}
+
+/* 🔹 Botões */
+button {
+  cursor: url("cursor/Link\ select.cur"), pointer !important;
+}
+
+/* 🔹 Quando passa o mouse (hover) */
+button:hover {
+  cursor: url("cursor/Link\ select.cur"), pointer !important;
+}
+
+/* 🔹 Quando clica */
+button:active {
+  cursor: url("cursor/Link\ select.cur"), pointer !important;
+}
+    
+
+/* 🔹 Texto (digitar / selecionar) */
+input, textarea {
+  cursor: url("cursor/Text\ select.cur"), text;
+}
+
+</style>
 </head>
 <body>
-    <font color="white">
-    <body background="../imagens/Menu.webp">
+    <style>
+    body {
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                    url("../imagens/Menu.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: white;
+  margin: 0;
+}
+</style>
     <audio controls autoplay loop>
     <source src="01. Enter Hallownest.mp3" type="audio/mpeg">
     </audio>
@@ -22,7 +87,7 @@
     <p>Hornet é um personagem importante em Hollow Knight, conhecido por sua agilidade, habilidades de combate e papel crucial na história do jogo. Ela é uma guerreira habilidosa que protege o reino de Hallownest e tem uma conexão misteriosa com o protagonista, o Cavaleiro. Hornet é uma figura enigmática, muitas vezes aparecendo em momentos-chave para desafiar o jogador ou fornecer informações importantes sobre a trama. Sua presença adiciona profundidade à narrativa e oferece desafios emocionantes para os jogadores enfrentarem ao longo de sua jornada em Hollow Knight.</p>
     <img src="../imagens/hornet.webp" alt="Imagem da personagem Hornet em Hollow Knight">
     <h2>Habilidades</h2>
-    <h4>Dica: CLique na Fala pra ouvir!</h4>
+    <h4>Dica: Clique na Fala pra ouvir!</h4>
     <table border="1">
         <tr>
             <th>Habilidade</th>
@@ -32,11 +97,11 @@
         <tr>
             <td>Dash</td>
             <td> Ela avança super rápido em linha reta </td>
-            <td><span onclick="document.getElementById('audio').play()" style="cursor:pointer;">
+            <td><span onclick="document.getElementById('audio6').play()" style="cursor:pointer;">
             SHA!
             </span>
 
-            <audio id="audio" src="../hornet/hollow-knight-hornet-voice-11.mp3"></audio></td>
+            <audio id="audio6" src="../hornet/hollow-knight-hornet-voice-11.mp3"></audio></td>
         </tr>
         <tr>
             <td>Agulha</td>
@@ -74,7 +139,42 @@
 
             <audio id="audio5" src="../hornet/hollow-knight-hornet-voice-9.mp3"></audio></td>
         </tr>
-        </font>
 
+<button onclick="lerPagina()" style="position:fixed;bottom:20px;right:20px;z-index:999;">
+  🔊 Ouvir
+</button>
+
+<button onclick="pausar()" style="position:fixed;bottom:60px;right:20px;z-index:999;">
+  ⏸ Pausar
+</button>
+
+<button onclick="continuar()" style="position:fixed;bottom:100px;right:20px;z-index:999;">
+  ▶️ Continuar
+</button>
+
+<script>
+let utterance;
+
+function lerPagina() {
+  speechSynthesis.cancel(); // reseta
+
+  const texto = document.body.innerText;
+
+  utterance = new SpeechSynthesisUtterance(texto);
+  utterance.lang = "pt-BR";
+  utterance.rate = 1;
+  utterance.pitch = 1;
+
+  speechSynthesis.speak(utterance);
+}
+
+function pausar() {
+  speechSynthesis.pause();
+}
+
+function continuar() {
+  speechSynthesis.resume();
+}
+</script>
 </body>
 </html>

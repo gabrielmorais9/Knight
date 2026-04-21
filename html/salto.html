@@ -5,11 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salto Duplo </title>
     <link rel="icon" type="image/x-icon" href="../img/hollow-knight-removebg-preview.png">
+<style>
+    body {
+      margin: 0;
+      opacity: 0;
+      animation: entrar 3s ease forwards;
+    }
 
+    @keyframes entrar {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+body {
+      margin: 0;
+      font-family: Trajan Pro Bold, serif;
+      background-color: #111;
+      color: white;
+    }
+/* 🔹 Cursor padrão do site */
+body {
+  cursor: url("cursor/Normal\ select.cur"), auto;
+}
+
+/* 🔹 Links (passar o mouse em links) */
+a {
+  cursor: url("cursor/Link\ select.cur"), pointer;
+}
+
+/* 🔹 Botões */
+button {
+  cursor: url("cursor/Link\ select.cur"), pointer !important;
+}
+
+/* 🔹 Quando passa o mouse (hover) */
+button:hover {
+  cursor: url("cursor/Link\ select.cur"), pointer !important;
+}
+
+/* 🔹 Quando clica */
+button:active {
+  cursor: url("cursor/Link\ select.cur"), pointer !important;
+}
+    
+
+/* 🔹 Texto (digitar / selecionar) */
+input, textarea {
+  cursor: url("cursor/Text\ select.cur"), text;
+}
+
+</style>
 </head>
 <body>
-    <font color="white">
-    <body background="../imagens/Menu.webp">
+    <style>
+    body {
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                    url("../imagens/Menu.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: white;
+  margin: 0;
+}
+</style>
     <audio controls autoplay loop>
     <source src="01. Enter Hallownest.mp3" type="audio/mpeg">
     </audio>
@@ -24,7 +88,42 @@
     <p>A habilidade de escalada é uma habilidade que permite ao personagem principal de Hollow Knight escalar paredes e superfícies verticais, aumentando ainda mais sua mobilidade e capacidade de exploração. Com essa habilidade, o jogador pode acessar áreas que antes eram inacessíveis, encontrar segredos escondidos e enfrentar desafios de maneira mais estratégica. A escalada é uma parte fundamental da mecânica de movimento do jogo, proporcionando uma experiência de exploração fluida e dinâmica em todo o reino de Hallownest.</p>
     <p><h3>Como obter a escalada?</h3>Você precisa obter a habilidade Garra de Louva-a-Deus (Mantis Claw), encontrada na Vila dos Louva-a-Deus no centro-sul do mapa. Ao equipá-la, segure a direção da parede enquanto estiver no ar para deslizar e pule novamente para escalar paredes repetidamente. </p>
     <img src="../imagens/cling-grip900x_wyds.jpg" alt="Imagem do Knight usando a Garra de Louva-a-Deus para escalar">
-    </font>
 
+<button onclick="lerPagina()" style="position:fixed;bottom:20px;right:20px;z-index:999;">
+  🔊 Ouvir
+</button>
+
+<button onclick="pausar()" style="position:fixed;bottom:60px;right:20px;z-index:999;">
+  ⏸ Pausar
+</button>
+
+<button onclick="continuar()" style="position:fixed;bottom:100px;right:20px;z-index:999;">
+  ▶️ Continuar
+</button>
+
+<script>
+let utterance;
+
+function lerPagina() {
+  speechSynthesis.cancel(); // reseta
+
+  const texto = document.body.innerText;
+
+  utterance = new SpeechSynthesisUtterance(texto);
+  utterance.lang = "pt-BR";
+  utterance.rate = 1;
+  utterance.pitch = 1;
+
+  speechSynthesis.speak(utterance);
+}
+
+function pausar() {
+  speechSynthesis.pause();
+}
+
+function continuar() {
+  speechSynthesis.resume();
+}
+</script>
 </body>
 </html>
