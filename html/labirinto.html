@@ -1,128 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt_br">
 <head>
 <meta charset="UTF-8">
 <title>Labirinto</title>
 <link rel="icon" type="image/x-icon" href="../img/hollow-knight-removebg-preview.png">
-    
-    <style>
-        body {
-      margin: 0;
-      opacity: 0;
-      animation: entrar 3s ease forwards;
-    }
+        <link rel="stylesheet" href="../css/cursor.css">
 
-    @keyframes entrar {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-body {
-      margin: 0;
-      font-family: Trajan Pro Bold, serif;
-      background-color: #111;
-      color: white;
-    }
-/* 🔹 Cursor padrão do site */
-body {
-  cursor: url("cursor/Normal\ select.cur"), auto;
-}
+  <link rel="stylesheet" href="../css/lab.css"
+    <link rel="stylesheet" href="../css/back.css">
 
-/* 🔹 Links (passar o mouse em links) */
-a {
-  cursor: url("cursor/Link\ select.cur"), pointer;
-}
-
-/* 🔹 Botões */
-button {
-  cursor: url("cursor/Link\ select.cur"), pointer !important;
-}
-
-/* 🔹 Quando passa o mouse (hover) */
-button:hover {
-  cursor: url("cursor/Link\ select.cur"), pointer !important;
-}
-
-/* 🔹 Quando clica */
-button:active {
-  cursor: url("cursor/Link\ select.cur"), pointer !important;
-}
-    
-
-/* 🔹 Texto (digitar / selecionar) */
-input, textarea {
-  cursor: url("cursor/Text\ select.cur"), text;
-}
-
-</style>
-<style>
-body {
-  margin: 0;
-  background: #111;
-  color: white;
-  text-align: center;
-  font-family: Arial;
-}
-
-/* 🔥 MAPA */
-#game {
-  width: 800px;
-  height: 600px;
-  margin: 20px auto;
-  position: relative;
-
-  /* troque pela sua imagem do mapa */
-  background-image: url("../fig/Screenshot_HK_Elderbug_01.webp");
-  background-size: cover;
-  overflow: hidden;
-}
-
-/* 🧍 jogador */
-#player {
-  width: 40px;
-  height: 40px;
-  position: absolute;
-
-  background-image: url("../fig/hollow-knight-knight.gif");
-  background-size: cover;
-}
-
-/* 🏆 tesouro */
-#goal {
-  width: 40px;
-  height: 40px;
-  position: absolute;
-
-  background-image: url("../fig/basin.png");
-  background-size: cover;
-}
-
-/* 🧱 paredes */
-.wall {
-  position: absolute;
-  background: rgba(0,0,0,0.6);
-}
-</style>
 </head>
 
 <body>
-<style>
-    body {
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                    url("../imagens/Menu.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 
-  color: white;
-  margin: 0;
-}
-</style>
     <audio controls autoplay loop>
     <source src="01. Enter Hallownest.mp3" type="audio/mpeg">
     </audio>
@@ -142,84 +32,7 @@ body {
 
 </div>
 
-<script>
-const player = document.getElementById("player");
-const game = document.getElementById("game");
-const goal = document.getElementById("goal");
-
-let x = 20;
-let y = 20;
-let step = 20;
-
-/* posição do tesouro */
-let goalX = 720;
-let goalY = 520;
-
-goal.style.left = goalX + "px";
-goal.style.top = goalY + "px";
-
-/* 🧱 colisão com paredes */
-function colisao(nx, ny) {
-  const playerBox = {
-    x: nx,
-    y: ny,
-    w: 40,
-    h: 40
-  };
-
-  const walls = document.querySelectorAll(".wall");
-
-  for (let wall of walls) {
-    const rect = wall.getBoundingClientRect();
-    const gameRect = game.getBoundingClientRect();
-
-    let wx = rect.left - gameRect.left;
-    let wy = rect.top - gameRect.top;
-    let ww = rect.width;
-    let wh = rect.height;
-
-    if (
-      playerBox.x < wx + ww &&
-      playerBox.x + playerBox.w > wx &&
-      playerBox.y < wy + wh &&
-      playerBox.y + playerBox.h > wy
-    ) {
-      return true;
-    }
-  }
-
-  return false;
-}
-
-/* 🎮 movimento */
-document.addEventListener("keydown", (e) => {
-
-  let nx = x;
-  let ny = y;
-
-  if (e.key === "ArrowUp" || e.key === "w") ny -= step;
-  if (e.key === "ArrowDown" || e.key === "s") ny += step;
-  if (e.key === "ArrowLeft" || e.key === "a") nx -= step;
-  if (e.key === "ArrowRight" || e.key === "d") nx += step;
-
-  /* limites */
-  if (nx < 0 || ny < 0 || nx > 760 || ny > 560) return;
-
-  /* colisão */
-  if (colisao(nx, ny)) return;
-
-  x = nx;
-  y = ny;
-
-  player.style.left = x + "px";
-  player.style.top = y + "px";
-
-  /* vitória */
-  if (x === goalX && y === goalY) {
-    alert("🏆 Você venceu!");
-  }
-});
-</script>
+<script src="../java/lab.js"></script>
 
 </body>
 </html>

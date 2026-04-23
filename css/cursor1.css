@@ -1,0 +1,55 @@
+
+
+    .navbar {
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #ff3b7a;
+    }
+
+    .content {
+      padding-top: 80px;
+      text-align: center;
+    }
+
+
+/* 🔹 Cursor padrão do site */
+body {
+  cursor: url("../html/cursor/Normal\ select.cur"), auto;
+}
+
+a {
+  cursor: url("../html/cursor/Link\ select.cur"), pointer;
+}
+
+button {
+  cursor: url("../html/cursor/Link\ select.cur"), pointer !important;
+}
+
+button:hover {
+  cursor: url("../html/cursor/Link\ select.cur"), pointer !important;
+}
+
+button:active {
+  cursor: url("../html/cursor/Link\ select.cur"), pointer !important;
+}
+    
+
+input, textarea {
+  cursor: url("../html/cursor/Text\ select.cur"), text;
+}

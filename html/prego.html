@@ -1,79 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt_br">
 <head>
+    <link rel="stylesheet" href="../css/back.css">
+    <link rel="stylesheet" href="../css/cursor.css">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prego </title>
     <link rel="icon" type="image/x-icon" href="../img/hollow-knight-removebg-preview.png">
-<style>
-    body {
-      margin: 0;
-      opacity: 0;
-      animation: entrar 3s ease forwards;
-    }
 
-    @keyframes entrar {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-body {
-      margin: 0;
-      font-family: Trajan Pro Bold, serif;
-      background-color: #111;
-      color: white;
-    }
-/* 🔹 Cursor padrão do site */
-body {
-  cursor: url("cursor/Normal\ select.cur"), auto;
-}
-
-/* 🔹 Links (passar o mouse em links) */
-a {
-  cursor: url("cursor/Link\ select.cur"), pointer;
-}
-
-/* 🔹 Botões */
-button {
-  cursor: url("cursor/Link\ select.cur"), pointer !important;
-}
-
-/* 🔹 Quando passa o mouse (hover) */
-button:hover {
-  cursor: url("cursor/Link\ select.cur"), pointer !important;
-}
-
-/* 🔹 Quando clica */
-button:active {
-  cursor: url("cursor/Link\ select.cur"), pointer !important;
-}
-    
-
-/* 🔹 Texto (digitar / selecionar) */
-input, textarea {
-  cursor: url("cursor/Text\ select.cur"), text;
-}
-
-</style>
 </head>
 <body>
-    <style>
-    body {
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                    url("../imagens/Menu.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  color: white;
-  margin: 0;
-}
-</style>
+  
     <audio controls autoplay loop>
     <source src="01. Enter Hallownest.mp3" type="audio/mpeg">
     </audio>
@@ -111,29 +49,7 @@ input, textarea {
   ▶️ Continuar
 </button>
 
-<script>
-let utterance;
+<script src="../java/narr.js"></script>
 
-function lerPagina() {
-  speechSynthesis.cancel(); // reseta
-
-  const texto = document.body.innerText;
-
-  utterance = new SpeechSynthesisUtterance(texto);
-  utterance.lang = "pt-BR";
-  utterance.rate = 1;
-  utterance.pitch = 1;
-
-  speechSynthesis.speak(utterance);
-}
-
-function pausar() {
-  speechSynthesis.pause();
-}
-
-function continuar() {
-  speechSynthesis.resume();
-}
-</script>
 </body>
 </html>

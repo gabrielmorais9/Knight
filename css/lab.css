@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  background: #111;
+  color: white;
+  text-align: center;
+  font-family: Arial;
+}
+
+/* 🔥 MAPA */
+#game {
+  width: 800px;
+  height: 600px;
+  margin: 20px auto;
+  position: relative;
+
+  /* troque pela sua imagem do mapa */
+  background-image: url("../fig/Screenshot_HK_Elderbug_01.webp");
+  background-size: cover;
+  overflow: hidden;
+}
+
+/* 🧍 jogador */
+#player {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+
+  background-image: url("../fig/hollow-knight-knight.gif");
+  background-size: cover;
+}
+
+/* 🏆 tesouro */
+#goal {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+
+  background-image: url("../fig/basin.png");
+  background-size: cover;
+}
+
+/* 🧱 paredes */
+.wall {
+  position: absolute;
+  background: rgba(0,0,0,0.6);
+}
