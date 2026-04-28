@@ -1,4 +1,4 @@
-// 🔥 CONFIG FIREBASE (substitua se precisar)
+//  CONFIG FIREBASE 
 const firebaseConfig = {
     apiKey: "AIzaSyD8idKcs3eVYib-u9PsW3R61ZRa4EuPfdU",
     authDomain: "knight-55f33.firebaseapp.com",
@@ -18,7 +18,7 @@ const db = firebase.database();
 let currentUser = null;
 let currentChat = null;
 
-// 🔐 LOGIN
+//  LOGIN
 function login(){
   auth.signInWithEmailAndPassword(
     email.value,
@@ -26,7 +26,7 @@ function login(){
   );
 }
 
-// 🔐 REGISTRO
+//  REGISTRO
 function register(){
   auth.createUserWithEmailAndPassword(
     email.value,
@@ -34,7 +34,7 @@ function register(){
   );
 }
 
-// 🔥 quando loga
+//  quando loga
 auth.onAuthStateChanged(user => {
   if(user){
     currentUser = user;
@@ -46,7 +46,7 @@ auth.onAuthStateChanged(user => {
   }
 });
 
-// 👥 carregar usuários
+//  carregar usuários
 function loadUsers(){
   db.ref("users").on("value", snap => {
     users.innerHTML = "";
@@ -70,7 +70,7 @@ function loadUsers(){
   });
 }
 
-// 💬 abrir chat
+//  abrir chat
 function openChat(uid){
   currentChat = [currentUser.uid, uid].sort().join("_");
 
@@ -85,7 +85,7 @@ function openChat(uid){
   });
 }
 
-// 📩 enviar msg
+//  enviar msg
 function sendMsg(){
   let input = document.getElementById("msg");
 

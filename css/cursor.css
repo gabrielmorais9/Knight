@@ -2,12 +2,12 @@ body {
   cursor: url("../html/cursor/Normal\ select.cur"), auto;
 }
 
-/* 🔹 Links (passar o mouse em links) */
+/*  Links (passar o mouse em links) */
 a {
   cursor: url("../html/cursor/Link\ select.cur"), pointer;
 }
 
-/* 🔹 Botões */
+/*  Botões */
 button {
   cursor: url("../html/cursor/Link\ select.cur"), pointer !important;
 }
@@ -17,13 +17,13 @@ button:hover {
   cursor: url("../html/cursor/Link\ select.cur"), pointer !important;
 }
 
-/* 🔹 Quando clica */
+/*  Quando clica */
 button:active {
   cursor: url("../html/cursor/Link\ select.cur"), pointer !important;
 }
     
 
-/* 🔹 Texto (digitar / selecionar) */
+/*  Texto (digitar / selecionar) */
 input, textarea {
   cursor: url("../html/cursor/Text\ select.cur"), text;
 }

@@ -1,13 +1,8 @@
-/* ========================= */
-/* RESET (evita bugs) */
-/* ========================= */
+
 * {
   box-sizing: border-box;
 }
 
-/* ========================= */
-/* BODY (tudo unificado) */
-/* ========================= */
 body {
   margin: 0;
   font-family: Trajan Pro Bold, serif;
@@ -40,18 +35,12 @@ body {
   }
 }
 
-/* ========================= */
-/* CONTEÚDO CENTRAL (PC bonito) */
-/* ========================= */
 main {
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* ========================= */
-/* IMAGENS (base segura) */
-/* ========================= */
 img {
   max-width: 100%;
   height: auto;
@@ -78,9 +67,6 @@ img {
   border-radius: 10px;
 }
 
-/* ========================= */
-/* TEXTOS */
-/* ========================= */
 h1 {
   font-size: 32px;
 }
@@ -89,18 +75,14 @@ h2 {
   font-size: 24px;
 }
 
-/* ========================= */
-/* BOTÕES */
-/* ========================= */
+
 button {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
 }
 
-/* ========================= */
-/* 📱 MOBILE */
-/* ========================= */
+
 @media (max-width: 768px) {
 
   html {

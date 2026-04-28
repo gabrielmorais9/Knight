@@ -13,7 +13,7 @@ let goalY = 520;
 goal.style.left = goalX + "px";
 goal.style.top = goalY + "px";
 
-/* 🧱 colisão com paredes */
+/*  colisão com paredes */
 function colisao(nx, ny) {
   const playerBox = {
     x: nx,
@@ -46,7 +46,7 @@ function colisao(nx, ny) {
   return false;
 }
 
-/* 🎮 movimento */
+/*  movimento */
 document.addEventListener("keydown", (e) => {
 
   let nx = x;
