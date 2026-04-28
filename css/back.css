@@ -4,6 +4,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  min-height: 100vh;
 
   color: white;
   margin: 0;
@@ -30,3 +31,83 @@ body {
       background-color: #111;
       color: white;
     }
+    /* Regra geral pra TODAS as imagens */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Imagem pequena (tipo ícone ou preview) */
+.img-pequena {
+  width: 120px;
+}
+
+/* Imagem média (posts, conteúdo normal) */
+.img-media {
+  width: 300px;
+}
+
+/* Imagem grande (banner ou destaque) */
+.img-grande {
+  width: 100%;
+}
+
+/* Imagem estilo card (cortada bonitinha) */
+.img-card {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+/* ========================= */
+/* 📱 AJUSTE PARA CELULAR */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  /* Texto geral menor e mais confortável */
+  body {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  /* Containers ficam em coluna */
+  .container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Caixas ocupam a tela toda */
+  .box {
+    width: 100%;
+  }
+
+  /* Imagens sempre se adaptam */
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Títulos menores */
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  /* Botões mais fáceis de clicar */
+  button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  /* Espaçamento geral */
+  section {
+    padding: 10px;
+  }
+
+}
