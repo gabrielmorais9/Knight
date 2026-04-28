@@ -20,18 +20,11 @@
     <p>O Vazio é um elemento central na história e na mitologia de Hollow Knight, representando uma força misteriosa e poderosa que permeia o reino de Hallownest. Ele é frequentemente associado à escuridão, ao desconhecido e à essência do próprio reino. O Vazio é uma presença enigmática que influencia os eventos do jogo, desde a criação de criaturas e entidades até a corrupção que afeta os habitantes de Hallownest. Ele é uma força primordial que desempenha um papel crucial na narrativa, simbolizando tanto a ameaça quanto a esperança dentro do mundo sombrio de Hollow Knight.</p>
     <img src="../imagens/hollow-knight-magias.jpg" alt="Imagem do Vazio em Hollow Knight" class="img-grande">
 
-<button onclick="lerPagina()" style="position:fixed;bottom:20px;right:20px;z-index:999;">
-  🔊 Ouvir
-</button>
-
-<button onclick="pausar()" style="position:fixed;bottom:60px;right:20px;z-index:999;">
-  ⏸ Pausar
-</button>
-
-<button onclick="continuar()" style="position:fixed;bottom:100px;right:20px;z-index:999;">
-  ▶️ Continuar
-</button>
-
+<div class="audio-container">
+  <button class="audio-btn" onclick="lerPagina()">🔊 Ouvir</button>
+  <button class="audio-btn" onclick="pausar()">⏸ Pausar</button>
+  <button class="audio-btn" onclick="continuar()">▶️ Continuar</button>
+</div>
 <script src="../java/narr.js"></script>
 </body>
 </html>

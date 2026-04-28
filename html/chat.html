@@ -30,17 +30,11 @@
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 
 <script src="../java/chat.js"></script>
-<button onclick="lerPagina()" style="position:fixed;bottom:20px;right:20px;z-index:999;">
-  🔊 Ouvir
-</button>
-
-<button onclick="pausar()" style="position:fixed;bottom:60px;right:20px;z-index:999;">
-  ⏸ Pausar
-</button>
-
-<button onclick="continuar()" style="position:fixed;bottom:100px;right:20px;z-index:999;">
-  ▶️ Continuar
-</button>
+<div class="audio-container">
+  <button class="audio-btn" onclick="lerPagina()">🔊 Ouvir</button>
+  <button class="audio-btn" onclick="pausar()">⏸ Pausar</button>
+  <button class="audio-btn" onclick="continuar()">▶️ Continuar</button>
+</div>
 
 <script src="../java/narr.js"></script>
 

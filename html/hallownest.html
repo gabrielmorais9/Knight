@@ -24,18 +24,11 @@
     <p>Hallownest é o vasto e misterioso reino subterrâneo explorado em Hollow Knight, marcado por sua atmosfera sombria e cheia de história. O mapa de Hallownest revela um mundo interligado, composto por diversas regiões únicas, como a esquecida Dirtmouth, a perigosa Greenpath, a envenenada Fungal Wastes e a grandiosa Cidade das Lágrimas. Cada área possui características próprias, inimigos distintos e segredos escondidos, incentivando a exploração constante. À medida que o jogador avança, o mapa vai sendo expandido e detalhado, mostrando a complexidade do reino e sua decadência após a infecção que atingiu seus habitantes. Assim, o mapa não é apenas um guia de navegação, mas também uma representação da história, dos desafios e da beleza melancólica de Hallownest.</p>
     <img src="../img/Map_Artwork.webp" alt="Mapa de Hallownest" class="img-grande">
     </font>
-<button onclick="lerPagina()" style="position:fixed;bottom:20px;right:20px;z-index:999;">
-  🔊 Ouvir
-</button>
-
-<button onclick="pausar()" style="position:fixed;bottom:60px;right:20px;z-index:999;">
-  ⏸ Pausar
-</button>
-
-<button onclick="continuar()" style="position:fixed;bottom:100px;right:20px;z-index:999;">
-  ▶️ Continuar
-</button>
-
+<div class="audio-container">
+  <button class="audio-btn" onclick="lerPagina()">🔊 Ouvir</button>
+  <button class="audio-btn" onclick="pausar()">⏸ Pausar</button>
+  <button class="audio-btn" onclick="continuar()">▶️ Continuar</button>
+</div>
 <script src="../java/narr.js"></script>
 
 </body>
